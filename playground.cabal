@@ -1,0 +1,84 @@
+-- This file has been generated from package.yaml by hpack version 0.28.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 5b0148953dbf32942633cb45022f41709df87495fbbd743d644144feee8c6f9e
+
+name:           playground
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/playground#readme>
+homepage:       https://github.com/githubuser/playground#readme
+bug-reports:    https://github.com/githubuser/playground/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2018 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+cabal-version:  >= 1.10
+extra-source-files:
+    ChangeLog.md
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/playground
+
+library
+  exposed-modules:
+      GlossExample
+      Lib
+      Negamax
+      ReaderExample
+      RubikScrambles
+  other-modules:
+      Paths_playground
+  hs-source-dirs:
+      src
+  default-extensions: OverloadedStrings
+  ghc-options: -Wall
+  build-depends:
+      base >=4.7 && <5
+    , gloss
+    , lens
+    , mtl
+    , random
+    , text
+  default-language: Haskell2010
+
+executable playground-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_playground
+  hs-source-dirs:
+      app
+  default-extensions: OverloadedStrings
+  ghc-options: -Wall -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , gloss
+    , lens
+    , mtl
+    , playground
+    , random
+    , text
+  default-language: Haskell2010
+
+test-suite playground-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_playground
+  hs-source-dirs:
+      test
+  default-extensions: OverloadedStrings
+  ghc-options: -Wall -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , gloss
+    , lens
+    , mtl
+    , playground
+    , random
+    , text
+  default-language: Haskell2010
