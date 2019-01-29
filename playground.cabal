@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 5b0148953dbf32942633cb45022f41709df87495fbbd743d644144feee8c6f9e
+-- hash: 8acb5ac1a066619572feb76f462e3d5c90775d2314d8cceae5609b91849dd07b
 
 name:           playground
 version:        0.1.0.0
@@ -27,21 +27,22 @@ source-repository head
 library
   exposed-modules:
       GlossExample
-      Lib
-      Negamax
-      ReaderExample
+      ParallelTest
       RubikScrambles
   other-modules:
       Paths_playground
   hs-source-dirs:
       src
-  default-extensions: OverloadedStrings
+  default-extensions: NoImplicitPrelude OverloadedStrings
   ghc-options: -Wall
   build-depends:
       base >=4.7 && <5
+    , gauge
     , gloss
     , lens
     , mtl
+    , parallel
+    , protolude
     , random
     , text
   default-language: Haskell2010
@@ -52,14 +53,17 @@ executable playground-exe
       Paths_playground
   hs-source-dirs:
       app
-  default-extensions: OverloadedStrings
+  default-extensions: NoImplicitPrelude OverloadedStrings
   ghc-options: -Wall -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
+    , gauge
     , gloss
     , lens
     , mtl
+    , parallel
     , playground
+    , protolude
     , random
     , text
   default-language: Haskell2010
@@ -71,14 +75,17 @@ test-suite playground-test
       Paths_playground
   hs-source-dirs:
       test
-  default-extensions: OverloadedStrings
+  default-extensions: NoImplicitPrelude OverloadedStrings
   ghc-options: -Wall -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
+    , gauge
     , gloss
     , lens
     , mtl
+    , parallel
     , playground
+    , protolude
     , random
     , text
   default-language: Haskell2010

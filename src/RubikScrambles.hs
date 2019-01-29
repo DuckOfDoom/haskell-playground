@@ -4,6 +4,8 @@ module RubikScrambles
 ) where
 
 import System.Random
+import Protolude
+import Prelude (String, read, (!!))
 
 data Move = F | R | U | L | B | D | F' | R' | U' | L' | B' | D'
   deriving (Show, Read)
@@ -15,15 +17,15 @@ generate :: Int -> IO [Move]
 generate i = do
   sequence $ replicate i fill
   where 
-    list :: [Char]
-    list = "FRULBD"
+    l :: [Char]
+    l = "FRULBD"
     
     fill :: IO Move
     fill = do 
-      rand <- randomRIO (0, (length list - 1))
-      reverse <- randomRIO (True, False)
-      pure $ (read $ getValue rand reverse :: Move)
+      rand <- randomRIO (0, (length l - 1))
+      rev <- randomRIO (True, False)
+      pure $ (read $ getValue rand rev :: Move)
         where 
           getValue :: Int -> Bool -> String
-          getValue i reverse = [list !! i] ++ if reverse then "'" else ""
+          getValue idx r = [l !! idx] ++ if r then "'" else ""
 --generatePretty 

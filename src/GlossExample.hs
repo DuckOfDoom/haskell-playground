@@ -1,6 +1,7 @@
 module GlossExample 
 where
 
+import Protolude
 import Graphics.Gloss
 
 draw :: IO ()
