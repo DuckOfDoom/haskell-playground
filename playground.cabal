@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 8acb5ac1a066619572feb76f462e3d5c90775d2314d8cceae5609b91849dd07b
+-- hash: bb12d4ef78937b100aa4d604a017604f3c2ff62b68f909611b23cd0fda83d931
 
 name:           playground
 version:        0.1.0.0
@@ -29,6 +29,7 @@ library
       GlossExample
       ParallelTest
       RubikScrambles
+      Server
   other-modules:
       Paths_playground
   hs-source-dirs:
@@ -39,12 +40,15 @@ library
       base >=4.7 && <5
     , gauge
     , gloss
+    , http-types
     , lens
     , mtl
     , parallel
     , protolude
     , random
     , text
+    , wai
+    , warp
   default-language: Haskell2010
 
 executable playground-exe
@@ -59,6 +63,7 @@ executable playground-exe
       base >=4.7 && <5
     , gauge
     , gloss
+    , http-types
     , lens
     , mtl
     , parallel
@@ -66,6 +71,8 @@ executable playground-exe
     , protolude
     , random
     , text
+    , wai
+    , warp
   default-language: Haskell2010
 
 test-suite playground-test
@@ -81,6 +88,7 @@ test-suite playground-test
       base >=4.7 && <5
     , gauge
     , gloss
+    , http-types
     , lens
     , mtl
     , parallel
@@ -88,4 +96,6 @@ test-suite playground-test
     , protolude
     , random
     , text
+    , wai
+    , warp
   default-language: Haskell2010

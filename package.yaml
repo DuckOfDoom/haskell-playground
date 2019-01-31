@@ -30,6 +30,9 @@ dependencies:
 - random
 - gloss
 - gauge
+- wai
+- warp
+- http-types
 - parallel
 
 default-extensions:
