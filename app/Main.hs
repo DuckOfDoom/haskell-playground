@@ -2,7 +2,8 @@ module Main where
 
 import Protolude
 -- import GlossExample (draw)
-import qualified Server (main)
+-- import Server (main)
+import Parsing (testParse)
 
 main :: IO ()
-main = Server.main
+main = putStrLn ("hey" :: Text)

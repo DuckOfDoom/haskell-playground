@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: bb12d4ef78937b100aa4d604a017604f3c2ff62b68f909611b23cd0fda83d931
+-- hash: a7ebca7f35abaa3b40bbb8807d7a3064c27f39b1e1f374966b801fe23db07a72
 
 name:           playground
 version:        0.1.0.0
@@ -28,6 +28,7 @@ library
   exposed-modules:
       GlossExample
       ParallelTest
+      Parsing
       RubikScrambles
       Server
   other-modules:
@@ -37,7 +38,8 @@ library
   default-extensions: NoImplicitPrelude OverloadedStrings
   ghc-options: -Wall
   build-depends:
-      base >=4.7 && <5
+      attoparsec
+    , base >=4.7 && <5
     , gauge
     , gloss
     , http-types
@@ -60,7 +62,8 @@ executable playground-exe
   default-extensions: NoImplicitPrelude OverloadedStrings
   ghc-options: -Wall -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      base >=4.7 && <5
+      attoparsec
+    , base >=4.7 && <5
     , gauge
     , gloss
     , http-types
@@ -85,7 +88,8 @@ test-suite playground-test
   default-extensions: NoImplicitPrelude OverloadedStrings
   ghc-options: -Wall -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      base >=4.7 && <5
+      attoparsec
+    , base >=4.7 && <5
     , gauge
     , gloss
     , http-types
